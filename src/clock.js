@@ -20,12 +20,12 @@ class Clock extends React.Component {
   }
   getTime(time) {    
     const second = time.getSeconds();
-    let word;    
+    let word = '';    
     //If the current second is a multiple of five then automatically current second will also less then 60
-    if(Math.pow(second,5) <= 60)      
-      word = 'FizzBuzz';    
-    else if(Math.pow(second,3) <= 60)     
-      word = 'Fizz';  
+    if(second % 3 === 0)      
+      word = 'Fizz';    
+    if(second % 5 === 0)     
+      word += 'Buzz';  
     else
       word = second;
     time = time.getHours()+':'+time.getMinutes()+':'+word  
